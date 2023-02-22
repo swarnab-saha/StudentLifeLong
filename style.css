@@ -1,0 +1,583 @@
+/* For body */
+body {
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #ebe3e3;
+}
+
+/* Top header */
+.text-top-header {
+    background-color: #ff4000;
+    color: #ffffff;
+}
+.link-color a:link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Top header for mobile view */
+@media only screen and (max-width: 576px) {  
+    .break-line::after {
+        content: "\a";
+        white-space: pre;
+    }
+}
+
+@media only screen and (max-width: 768px) { 
+    .mail-space {
+        margin-left: 20px;
+    } 
+    .text-top-header {
+        text-align: center;
+    }
+}
+
+/* Top header for desktop view */
+@media  only screen and (min-width: 768px) {
+    .mail-space {
+        margin-left: 20px;
+        margin-right: 100px;
+    }
+    .text-top-header {
+        text-align: right;
+    }
+}
+
+/* Course Scroll ber */
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+/* Navber for mobile view */
+@media  only screen and (max-width: 992px) {
+    .nav-right {
+        text-align: center;
+    }
+    .nav-login {
+        display: none;
+    }
+}
+
+/* Navber for desktop view */
+@media  only screen and (min-width: 992px) {
+    .nav-login {
+        display: block;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+    .login-btn {
+        width: 100px;
+        border-radius: 20px;
+    }
+}
+
+/* Login button for mobile view */
+@media  only screen and (max-width: 576px) {
+    .login {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .login-btn {
+        width: 200px;
+        border-radius: 20px;
+    }
+}
+
+/* Login button for desktop view */
+@media  only screen and (min-width: 576px) {
+    .login {
+        display: block;
+        margin-top: 10px;
+        text-align: right;
+        margin-right: 50px;
+    }
+    .login-btn {
+        width: 200px;
+        border-radius: 20px;
+    }
+}
+
+/* Login button for desktop view with display none */
+@media  only screen and (min-width: 992px) {
+    .login {
+        display: none;
+    }
+}
+
+/* Login button for desktop view with display */
+@media  only screen and (min-width: 992px) and (max-width: 1134px) {
+    .login-btn {
+        margin-top: 15px;
+    }
+}
+
+/* Viewport width */
+@media only screen and (max-width: 238px) {  
+    .view-short {
+        font-size: 6vw;
+    }
+    .login-btn {
+        width: 30vw;
+        font-size: 6vw;
+    }
+    .line-view li {
+        padding: 6vw;
+    }
+}
+
+/* Search ber */
+.search-ber {
+    border-radius: 25px;
+}
+
+/* Search ber for desktop view */
+@media only screen and (min-width: 0px) {  
+    div.div-search {
+        position: relative;
+    }
+    div.div-search-img {
+        position: absolute;
+        top: 0px;
+        width: 20px;
+    }
+    .img-magnifying {
+        font-size: 25px; 
+        margin-top: 8px;
+        margin-left: 8px;
+    }
+    .img-magnifying-admin {
+        font-size: 25px; 
+        margin-top: 32px;
+        margin-left: 8px;
+    }
+    .padding-search {
+        padding-left: 35px;
+    }
+}
+
+/* Search ber for mobile view */
+@media only screen and (max-width: 250px) {  
+    .padding-search {
+        padding-left: 13vw;
+    }
+}
+
+/* Footer */
+.footer-bottom {
+    background-color: #000000;
+    color: #ffffff;
+}
+.link a:link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.link a:visited {
+    color: #ffffff;
+}
+.highlight a:hover {
+    font-weight: bold;
+}
+
+/* Resposive footer for mobile view */
+@media only screen and (max-width: 992px) {
+    .margin-name {
+        margin-top: 20px;
+    }
+    .head-name {
+        text-align: center;
+    }
+    .div-hide {
+        display: none;
+    }
+    .line-view {
+        display: block;
+    }
+}
+
+/* Resposive footer for mobile view with inline block */
+@media only screen and (min-width: 238px) {
+    .line-view li {
+        display: inline-block;
+        padding: 20px;
+    }
+}
+
+/* Resposive footer for desktop view */
+@media only screen and (min-width: 992px) {
+    .margin-name {
+        margin-top: 20px;
+    }
+    .copyright-margin {
+        margin-top: 25px;
+    }
+    .div-hide {
+        display: block;
+    }
+    .line-view {
+        display: none;
+    }
+}
+
+/* Copyright div CSS */
+@media only screen and (min-width: 1089px) {
+    .copyright-margin {
+        margin-top: 35px;
+    }
+}
+
+
+/* About us CSS */
+
+.about-item {
+    margin-top: 20px;
+    background-color: white;
+    padding: 80px,30px;
+    box-shadow: 0 0 9px rgba(0,0,0,.6);
+}
+.about-item hr {
+    width: 46px;
+    height: 3px;
+    background-color:#5fbff9;
+    margin: 0 auto;
+    border: none;
+}
+/* For small mobile view */
+@media only screen and (max-width: 190px) {
+    .about-item {
+        padding: 6vw;
+    }
+    .about-item i {
+        font-size: 6vw;
+    }
+    .about-item hr {
+        width: 6vw;
+        height: 3vw;
+    }
+    .about-item p {
+        font-size: 6vw;
+    }
+    .div-short {
+        font-size: 6vw;
+    }
+}
+
+/* For desktop view */
+@media only screen and (min-width: 190px) {
+    .about-item i {
+        font-size: 43px;
+        margin: 0;   
+    }
+    .about-item p {
+        margin-top: 20px;
+    }
+    .about-item:hover {
+        background-color:#5fbff9;
+    }
+    .about-item:hover i,
+    .about-item:hover h3,
+    .about-item:hover p {
+        color:#ffffff;
+    }
+    .about-item:hover hr {
+        background-color:#ffffff;
+    }
+    .about-item:hover i {
+        transform: translateY(-20px);
+    }
+    .about-item:hover i,
+    .about-item:hover h3,
+    .about-item:hover hr {
+        transition: all 400ms ease-in-out;
+    }
+    .about-item {
+        padding: 50px;
+    }
+}
+
+/* Box height grater than 1400px */
+@media only screen and (min-width: 1400px) {
+    .about-item {
+        height: 450px;
+    }
+}
+
+/* Box height grater than 1200px */
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    .about-item {
+        height: 480px;
+    }
+}
+
+/* Box height grater than 992px */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .about-item {
+        height: 576px;
+    }
+}
+
+/* Box height grater than 768px */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .about-item {
+        height: 865px;
+    }
+}
+
+/* Apply online CSS */  /* User login CSS */
+.form-bg { 
+    box-shadow: 0 0 9px rgba(0,0,0,.6);
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+/* Apply now form */  /* User login form */
+@media only screen and (max-width: 198px) {
+    .form-bg { 
+        padding: 0px;
+    }
+}
+
+/* Apply now bottom */
+@media only screen and (max-width: 238px) {
+    .btn-apply {
+        width: 30vw;
+        font-size: 6vw;
+    }
+}
+
+/* Courses CSS */
+.full-content {
+    background-color: #2c2b2b;
+}
+
+/* Courses for desktop view */
+@media only screen and (min-width: 992px) {
+    .float-right {
+        float: right;
+    }
+    .full-content {
+        height: 300px;
+    }
+    .content h3 {
+        padding-top: 60px;
+    }
+    .card-img {
+        width: 250px;
+    }
+    .box {
+        margin-top: 150px;
+    }
+}
+
+/* Courses for tablet view */
+@media only screen and (max-width: 992px) {
+    .full-content {
+        height: 300px;
+    }
+    .content h3 {
+        padding-top: 60px;
+    }
+    .card-img {
+        margin-top: 20px;
+        width: 250px;
+    }
+    .box {
+        margin-top: 150px;
+    }
+}
+
+/* Courses for mobile view */
+@media only screen and (max-width: 768px) {
+    .card-img {
+        width: 200px;
+    }
+}
+
+/* Course img for small view */
+@media only screen and (max-width: 576px) {
+    .card-img {
+        width: 30vw;
+    }
+}
+
+/* For short view small screen */
+@media only screen and (max-width: 576px) {
+    .full-content {
+        font-size: 3vw;
+    }
+    .text-short {
+        font-size: 5vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .full-content {
+        height: 300px;
+    }
+    .box {
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .full-content {
+        height: 250px;
+    }
+    .box {
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 250px) {
+    .full-content {
+        height: 180px;
+    }
+}
+
+@media only screen and (max-width: 200px) {
+    .full-content {
+        height: 160px;
+    }
+}
+
+@media only screen and (max-width: 140px) {
+    .full-content {
+        height: 150px;
+    }
+}
+
+/* Login CSS */
+.field-top {
+    background-color: rgb(72, 72, 190);
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+/* Login bottom */
+@media only screen and (max-width: 238px) {
+    .field-top {
+        font-size: 6vw;
+    }
+    .btn-login {
+        width: 30vw;
+        font-size: 6vw;
+    }
+}
+
+ /* User login CSS */
+.forget a:link {
+    text-decoration: none;
+}
+
+/* Admin header search link display none screen size less than 576px */
+@media only screen and (max-width: 576px) {
+    .search-link {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #search_bar {
+        display: block;
+    }
+}
+
+/* Secrch ber cross img */
+@media only screen and (max-width: 576px) {  
+    .search-cross {
+        display: none;
+    }
+    .img-magnifying-admin {
+        margin-top: 8px;
+    }
+}
+
+/* Breadcomes CSS */
+.nav-bread a:link{
+    text-decoration: none;
+}
+
+/* Chat confirmation CSS */
+.chat-container {
+    width:100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.send,.recieved {
+    cursor:pointer;
+    border:none;
+    color: #00a037;
+    border-radius: 50px;
+    box-shadow:inset 10px 10px 10px -1px rgba(10,99,169,0.16),
+                inset -10px -10px 10px -1px rgba(255,255,255,0.70); ;
+
+
+}
+.recieved {
+    color:#ed0000;
+    box-shadow:inset 10px 10px 10px -1px rgba(10,99,169,0.16),
+                inset -10px -10px 10px -1px rgba(255,255,255,0.70); ;
+}
+
+@media only screen and (max-width: 250px) {
+    .send,.recieved {
+        font-size:5vw;
+        width:30vw;
+        font-weight: 100vw;
+        padding:5vw;
+    }
+    .desktop-chat {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 250px) and (max-width: 576px) {
+    .desktop-chat {
+        display: none;
+    }
+    .mobile-chat {
+        display: block;
+    }
+    .send,.recieved {
+        font-size:20px;
+        width:150px;
+        font-weight: 500;
+        padding:30px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 992px) {
+    .mobile-chat {
+        display: none;
+    }
+    .send,.recieved {
+        font-size:20px;
+        width:150px;
+        font-weight: 500;
+        padding:30px;
+    }
+    .left-send {
+        margin-right:30%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .mobile-chat {
+        display: none;
+    }
+    .send,.recieved {
+        font-size:25px;
+        width:200px;
+        font-weight: 500;
+        padding:30px;
+    }
+    .left-send {
+        margin-right:30%;
+    }
+}
