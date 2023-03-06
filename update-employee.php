@@ -1,7 +1,6 @@
 <?php 
-    session_start();
     require_once 'database-connection.php';
-    $employee_id = $_POST['employee-id'];
+    $employee_id = $_POST['suggestions'];
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
     $qury = "SELECT * FROM employee WHERE employee_id = '".$employee_id."'";
     if($result=$mysqli->query($qury)){
@@ -9,9 +8,8 @@
             require_once 'next-update-employee.php';
         }
         else{
-            $_SESSION['wrong-id-msg'] = "Invalid Employee Id! Please check your input!";
+            $_SESSION['message'] = "Invalid Employee Id! Please check your input!";
             header('location: employee-update.php');
         }
     }
-    mysqli_close($mysqli);
 ?>

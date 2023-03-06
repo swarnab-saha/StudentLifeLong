@@ -1,7 +1,6 @@
 <?php
-    session_start();
     require_once 'database-connection.php';
-    $name = strtoupper($_POST['name']);
+    $name = ucwords($_POST['name']);
     $mobile = $_POST['mobile'];
     $email = strtolower($_POST['email']);
     $course = $_POST['course'];
@@ -16,7 +15,7 @@
     $qury = "INSERT INTO apply_online(name,mobile,email,course_id) 
     VALUES('".$name."','".$mobile."','".$email."','".$course_id."')";
     if(mysqli_query($mysqli,$qury)){
-        $_SESSION['enquery-msg'] = "Thank you " .$name. ", we will contact you soon.";
+        $_SESSION['message'] = "Thank you " .$name. ", we will contact you soon.";
         header('location: index.php');
     }
     mysqli_close($mysqli);

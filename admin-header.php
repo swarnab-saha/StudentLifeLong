@@ -1,3 +1,5 @@
+<?php require_once 'database-connection.php';?>
+
 <!doctype html>
 <html lang="en">
 
@@ -14,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <!-- Logo -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -27,25 +29,25 @@
     <!-- Navber -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid link-color">
-            <a class="navbar-brand view-short" href="index.php">Student LifeLong</a>
-            <button class="navbar-toggler view-short" type="button" data-bs-toggle="collapse"
+            <a class="navbar-brand" href="admin-index.php">Student LifeLong</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
                 aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse nav-right" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 view-short">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" id="home"
+                        <a class="nav-link nav-active" aria-current="page" id="home"
                         href="admin-index.php">Home</a>
-                    </li>
+                    </li>            
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Entry
                         </a>
-                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown" >
+                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="course-entry.php">Course</a></li>
                             <li><a class="dropdown-item" href="department-entry.php">Department</a> 
                             </li>
@@ -60,7 +62,7 @@
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             View
                         </a>
-                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown" >
+                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="course-view.php">Course</a></li>
                             <li><a class="dropdown-item" href="department-view.php">Department</a> 
                             </li>
@@ -101,10 +103,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Admission</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Attendance</a>
+                        <a class="nav-link nav-active" href="admission.php">Admission</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
@@ -121,11 +120,56 @@
                     <li class="nav-item search-link">
                         <a class="nav-link" href="#" onclick="search_ber_show()">Search</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Test</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu scrollable-menu dropdown-menu-lg-end" 
+                        aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="apply-by-students.php">
+                            Apply by Students</a></li>
+                            <li><a class="dropdown-item" href="try-to-contact-by-visitors.php">
+                            Try to Contact by Visiters</a></li>
+                            <li><a class="dropdown-item" href="admission-students.php">
+                            View Admissions</a></li>
+                            <li><a class="dropdown-item" href="hold-students.php">
+                            Hold Students</a></li>
+                            <li><a class="dropdown-item" href="search-admission.php">
+                            Search Admissions</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?php 
+                                $employee_id = $_SESSION['employee-id'];
+                                $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
+                                $qury = "SELECT employee_name FROM employee WHERE employee_id = 
+                                '".$employee_id."'";
+                                if($result=$mysqli->query($qury)){
+                                    if(mysqli_num_rows($result)>0){
+                                        $row = $result->fetch_assoc();
+                                        if(strpos($row['employee_name'],' ',0)>0)
+                                            $employee_name = 
+                                            substr($row['employee_name'],0,
+                                            strpos($row['employee_name'],' ',0));
+                                        else
+                                            $employee_name = $row['employee_name'];
+                                    }
+                                }
+                                $username = $employee_name;
+                                echo $username;
+                                mysqli_close($mysqli);
+                            ?>
+                        </a>
+                        <ul class="dropdown-menu scrollable-menu dropdown-menu-lg-end" 
+                        aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="my-profile.php">My Profile</a> 
+                            </li>
+                            <li><a class="dropdown-item" href="logout.php">Logout</a> 
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -141,11 +185,11 @@
                     </i>
                 </div>
                 <div>
-                    <input class="form-control search-ber padding-search view-short" type="search" 
+                    <input class="form-control search-ber padding-search" type="search" 
                     placeholder="Search" aria-label="Search">
                 </div>
                 <div class="div-search-img">
-                    <i class="fa-solid fa-magnifying-glass img-magnifying-admin view-short" ></i>
+                    <i class="fa-solid fa-magnifying-glass img-magnifying-admin" ></i>
                 </div>
             </div>
         </form>

@@ -1,6 +1,6 @@
 <?php 
-    require_once 'header-index.php';
     require_once 'database-connection.php';
+    require_once 'header-index.php';
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
     $qury = "SELECT * FROM course WHERE course_name = 'Bootstrap'";
     if($result=$mysqli->query($qury)){
@@ -17,7 +17,7 @@
 ?>
 
 <!-- Navber content -->
-<div class="d-flex justify-content-center view-short mt-5">
+<div class="d-flex justify-content-center mt-5">
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
     <ol class="breadcrumb nav-bread">
         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
@@ -28,7 +28,7 @@
     <div class="full-content mt-5">
         <div class="container">
             <div class="content">
-                <h3 class="text-light text-short">Bootstrap</h3>
+                <h3 class="text-light">Bootstrap</h3>
                 
                 <!-- About course -->
                 <p class="text-light text-sm-start text-md-start text-lg-start text-xl-start">
@@ -39,13 +39,13 @@
                 </p>
 
                 <!-- Course fee -->
-                <h6 class="text-light text-short">Fee : 
+                <h6 class="text-light">Fee : 
                     <i class="fa-solid fa-indian-rupee-sign"></i> <del>7999</del>
                     <?php echo $course_fee;?>
                 </h6>
 
                 <!-- Course duration -->
-                <h6 class="text-light text-short">Duration : 
+                <h6 class="text-light">Duration : 
                     <i class="fa-sharp fa-solid fa-business-time"></i>  
                     <?php echo $course_duration;?> Month.
                 </h6>
@@ -61,8 +61,8 @@
     <!-- Below course details -->
     <div class="container mb-5">
         <div class="card box">
-            <div class="card-body text-short">
-                <h3 class="text-short">What you will learn ?</h3>
+            <div class="card-body">
+                <h3>What you will learn ?</h3>
                 <p><i class="fa-regular fa-hand-point-right"></i>
                     You will learn the Latest Bootstrap v5.2 Framework.
                 </p>

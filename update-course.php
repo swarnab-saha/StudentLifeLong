@@ -1,7 +1,6 @@
 <?php 
-    session_start();
     require_once 'database-connection.php';
-    $course_id = $_POST['course-id'];
+    $course_id = $_POST['suggestions'];
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
     $qury = "SELECT * FROM course WHERE course_id = '".$course_id."'";
     if($result=$mysqli->query($qury)){
@@ -9,9 +8,8 @@
             require_once 'next-update-course.php';
         }
         else{
-            $_SESSION['wrong-id-msg'] = "Invalid Course Id! Please check your input!";
+            $_SESSION['message'] = "Invalid Course Id! Please check your input!";
             header('location: course-update.php');
         }
     }
-    mysqli_close($mysqli);
 ?>

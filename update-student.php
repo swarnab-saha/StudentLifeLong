@@ -1,7 +1,6 @@
 <?php 
-    session_start();
     require_once 'database-connection.php';
-    $student_id = $_POST['student-id'];
+    $student_id = $_POST['suggestions'];
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
     $qury = "SELECT * FROM student WHERE student_id = '".$student_id."'";
     if($result=$mysqli->query($qury)){
@@ -9,9 +8,8 @@
             require_once 'next-update-student.php';
         }
         else{
-            $_SESSION['wrong-id-msg'] = "Invalid Student Id! Please check your input!";
+            $_SESSION['message'] = "Invalid Student Id! Please check your input!";
             header('location: student-update.php');
         }
     }
-    mysqli_close($mysqli);
 ?>

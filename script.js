@@ -44,16 +44,6 @@ function mobileNumber() {
     }
 }
 
-// navber = document.querySelector(".menu").querySelectorAll("a");
-// console.log(navber)
-// navber.forEach(element => {
-//     element.addEventListener("click", function(){
-//         navber.forEach(nav=>nav.classList.remove("active"))
-        
-//         this.classList.add("active");
-//     })
-// });
-
 // Search buttom clickable
 
 function search_ber_show() {
@@ -64,3 +54,67 @@ function search_ber_show() {
     }
 }
 
+// Username & password
+function usernamePasswordCheck() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var conpass = document.getElementById("confirm-password").value;
+    if (username == "") {
+        document.getElementById("user").innerHTML = "Create a new username";
+        document.getElementById("submit").disabled = true;
+        return false;
+    }
+    else {
+        document.getElementById("user").innerHTML = "";
+    }
+    if (password == "") {
+        document.getElementById("pass").innerHTML = "Create a new password";
+        document.getElementById("submit").disabled = true;
+        return false;
+    }
+    if (password.search(/[A-Z]/) == -1) {
+        document.getElementById("pass").innerHTML = "Please enter atleast one Uppercase letter";
+        document.getElementById("submit").disabled = true;
+        return false;
+    }
+    if (password.search(/[a-z]/) == -1) {
+        document.getElementById("pass").innerHTML = "Please enter atleast one Lowercase letter";
+        document.getElementById("submit").disabled = true;
+        return false;
+    }
+    if (password.search(/[0-9]/) == -1) {
+        document.getElementById("pass").innerHTML = "Please enter atleast one Number";
+        document.getElementById("submit").disabled = true;
+        return false;
+    }
+    if (password.search(/[~\!\@\\#\$\%\^\&\*\(\)\-\_\+\+\/\|\{\}\[\]\'\"\:\;\?\.\,\<\>]/) == -1) {
+        document.getElementById("pass").innerHTML = "Please enter atleast one Spacial character";
+        document.getElementById("submit").disabled = true;
+        return false;
+    }
+    if (password.length < 8) {
+        document.getElementById("pass").innerHTML = "Please enter atleast 8 character of Password";
+        document.getElementById("submit").disabled = true;
+        return false;
+    }
+    else {
+        document.getElementById("pass").innerHTML = "";
+    }
+    if (conpass != password) {
+        document.getElementById("conpass").innerHTML = "Password not matched!";
+        document.getElementById("submit").disabled = true;
+        return false;
+    }
+    else {
+        document.getElementById("conpass").innerHTML = "";
+        document.getElementById("submit").disabled = false;
+    }
+}
+
+var Item = document.querySelectorAll('a.nav-active');
+var CurrentLocation = location.href;
+for(var i=0; i<Item.length; i++){
+    if(Item[i].href===CurrentLocation){
+        Item[i].className="nav-link  active";
+    }
+}

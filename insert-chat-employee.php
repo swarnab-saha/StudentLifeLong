@@ -1,9 +1,8 @@
 <?php
-    session_start();
     require_once 'database-connection.php';
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
     $employee_id = $_POST['suggestions'];
-    $id = '1265883';
+    $id = $_SESSION['employee-id'];
     $message = $_POST['message'];
     $date = date('Y-m-d');
     $qury = "SELECT employee_id FROM employee WHERE employee_id = '".$employee_id."'";

@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require_once 'database-connection.php';
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
     $student_id = $_POST['suggestions'];

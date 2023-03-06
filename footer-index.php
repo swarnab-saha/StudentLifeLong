@@ -1,9 +1,9 @@
 <!-- Footer head -->
 <footer>
-    <div class="container-fluid view-short link">
+    <div class="container-fluid  link">
         <div class="row footer-bottom">
             <div class="col-lg-4 col-sm-12 margin-name">
-                <h1 class="view-short head-name"><a href="index.php">Student LifeLong</a></h1>
+                <h1 class="head-name"><a href="index.php">Student LifeLong</a></h1>
             </div>
 
             <!-- Display for desktop view -->
@@ -16,9 +16,9 @@
             </div>
             <div class="col-lg-3 col-sm-6 mt-2 div-hide">
                 <ul class="highlight">
-                    <li type="none"><a href="http://">Student's Gallery</a></li>
-                    <li type="none"><a href="http://">Contact Us</a></li>
-                    <li type="none"><a href="http://">Careers</a></li>
+                    <li type="none"><a href="apply-online.php">Apply Online</a></li>
+                    <li type="none"><a href="contact-us.php">Contact Us</a></li>
+                    <li type="none"><a href="careers.php">Careers</a></li>
                 </ul>
             </div>
 
@@ -27,13 +27,13 @@
                 <li type="none"><a href="index.php">Home</a></li>
                 <li type="none"><a href="index.php">Courses</a></li>
                 <li type="none"><a href="about-us.php">About Us</a></li>
-                <li type="none"><a href="http://">Student's Gallery</a></li>
-                <li type="none"><a href="http://">Contact Us</a></li>
-                <li type="none"><a href="http://">Careers</a></li>
+                <li type="none"><a href="apply-online.php">Apply Online</a></li>
+                <li type="none"><a href="contact-us.php">Contact Us</a></li>
+                <li type="none"><a href="careers.php">Careers</a></li>
             </ul>
 
             <!-- Copyright -->
-            <div class="col-lg-3 col-sm-12 text-center copyright-margin view-short">
+            <div class="col-lg-3 col-sm-12 text-center copyright-margin">
                 <p>&copy; 2022 - <span id="copyright-text"></span> All Rights Reserved</p>
             </div>
         </div>        

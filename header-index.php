@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <!-- Logo -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -25,7 +25,7 @@
 <body>
 
     <!-- Top header -->
-    <div class="text-top-header view-short link-color">
+    <div class="text-top-header link-color">
         <div class="container-fluid">
             <span class="break-line"><a href="tel:+917908031808"><i class="fa-solid fa-phone"></i> 
             +91-7908031808</a></span>
@@ -37,25 +37,25 @@
     <!-- Navber -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid link-color">
-            <a class="navbar-brand view-short" href="index.php">Student LifeLong</a>
-            <button class="navbar-toggler view-short" type="button" data-bs-toggle="collapse"
+            <a class="navbar-brand" href="index.php">Student LifeLong</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
                 aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse nav-right" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 view-short">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" id="home" 
+                        <a class="nav-link nav-active" aria-current="page" id="home" 
                         href="index.php">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"        
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Courses
                         </a>
-                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown" >
+                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="angular.php">Angular</a></li>
                             <li><a class="dropdown-item" href="bootstrap.php">Bootstrap</a></li>
                             <li><a class="dropdown-item" href="cloud-computing.php">Cloud 
@@ -80,20 +80,17 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="apply-online.php">
+                        <a class="nav-link nav-active" href="apply-online.php">
                         Apply Online</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about-us.php">About Us</a>
+                        <a class="nav-link nav-active" href="about-us.php">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link nav-active" href="contact-us.php">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Student's Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Careers</a>
+                        <a class="nav-link nav-active" href="careers.php">Careers</a>
                     </li>
                     <li class="nav-item nav-login">
                         <a class="btn btn-success login-btn" href="user-login.php">Login</a>
@@ -114,11 +111,11 @@
         <form>
             <div class="row div-search">
                 <div>
-                    <input class="form-control search-ber padding-search view-short" type="search" 
+                    <input class="form-control search-ber padding-search" type="search" 
                     placeholder="Search" aria-label="Search">
                 </div>
                 <div class="div-search-img">
-                    <i class="fa-solid fa-magnifying-glass img-magnifying view-short"></i>
+                    <i class="fa-solid fa-magnifying-glass img-magnifying"></i>
                 </div>
             </div>
         </form>

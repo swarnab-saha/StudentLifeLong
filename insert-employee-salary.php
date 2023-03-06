@@ -1,0 +1,53 @@
+<?php
+    require_once 'database-connection.php';
+    $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
+    $department_id = $_SESSION['department_id'];
+    $qury = "SELECT * FROM department WHERE department_id = '".$department_id."'";
+    if($result=$mysqli->query($qury)){
+        if(mysqli_num_rows($result)>0){
+            $row = $result->fetch_assoc();
+            $department_name = $row['department_name'];
+        }
+    }
+    $employee_id = strtoupper($_POST['suggestions']);
+    $employee_salary = $_POST['employee-salary'];
+    $emp_id = $_SESSION['employee-id'];
+    if($emp_id == $employee_id){
+        $_SESSION['message'] = "You can't set your salary yourself.";
+        header('location: employee-salary.php');
+    }
+    else{
+        $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
+        $qury = "SELECT employee_id FROM employee_salary WHERE employee_id = '".$employee_id."'";
+        if($result=$mysqli->query($qury)){
+            if(mysqli_num_rows($result)<1){ 
+                $qury = "INSERT INTO employee_salary(employee_id,salary) 
+                VALUES('".$employee_id."','".$employee_salary."')";        
+                if(mysqli_query($mysqli,$qury)){
+                    $_SESSION['message'] = "Employee salary is added.";
+                    if($department_name == 'Admin'){
+                        header('location: admin-index.php');
+                    }
+                    else if($department_name == 'Admission'){
+                        header('location: admission-index.php');
+                    }
+                    else if($department_name == 'HR'){
+                        header('location: hr-index.php');
+                    }
+                    else if($department_name == 'Finance'){
+                        header('location: finance-index.php');
+                    }
+                }
+                else {
+                    $_SESSION['message'] = "Invalid Employee Id! Please check your input!";
+                    header('location: employee-salary.php');
+                }
+            }
+            else{
+                $_SESSION['message'] = "Employee salary already added.";
+                header('location: employee-salary.php');
+            }
+        }
+    }
+    mysqli_close($mysqli);
+?>
