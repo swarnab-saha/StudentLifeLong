@@ -29,7 +29,7 @@
     <!-- Navber -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid link-color">
-            <a class="navbar-brand" href="admin-index.php">Student LifeLong</a>
+            <a class="navbar-brand" href="hr-index.php">Student LifeLong</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
                 aria-expanded="false"

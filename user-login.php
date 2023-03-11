@@ -33,7 +33,7 @@
                         id="password" title="Enter Password" 
                         placeholder="Enter Password" maxlength="20" required>
                         <div class="forget text-end">
-                            <a href="">forget password?</a>
+                            <a href="forget-password.php">forget password?</a>
                         </div>
                     </div>
                     <div class="forget text-center">

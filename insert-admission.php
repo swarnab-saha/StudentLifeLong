@@ -11,7 +11,7 @@
     }
     $admission_id = strtoupper($_POST['admission-id']);
     $admission_data = $_POST['admission-data'];
-    $mr_no = $_POST['mr-no'];
+    $mr_no = strtoupper($_POST['mr-no']);
     $student_id = $_POST['suggestions'];
     $qury = "SELECT student_id FROM student WHERE student_id = '".$student_id."'";
     if($result=$mysqli->query($qury)){

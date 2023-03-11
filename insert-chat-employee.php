@@ -8,15 +8,21 @@
     $qury = "SELECT employee_id FROM employee WHERE employee_id = '".$employee_id."'";
     if($result=$mysqli->query($qury)){
         if(mysqli_num_rows($result)>0){
-            $qury = "INSERT INTO chat_employee(sending_id,chat_date,employee_id,message) 
-            VALUES('".$id."','".$date."','".$employee_id."','".$message."')";
-            if(mysqli_query($mysqli,$qury)){
-                $_SESSION['chat-send'] = "Message has been send.";
+            if($employee_id == $id){
+                $_SESSION['message'] = "You can't send message yourself.";
                 header('location: chat-employee.php');
+            }
+            else{
+                $qury = "INSERT INTO chat_employee(sending_id,chat_date,employee_id,message) 
+                VALUES('".$id."','".$date."','".$employee_id."','".$message."')";
+                if(mysqli_query($mysqli,$qury)){
+                    $_SESSION['message'] = "Message has been send.";
+                    header('location: chat-employee.php');
+                }
             }
         }
         else{
-            $_SESSION['wrong-id'] = "Employee id is incorrect!";
+            $_SESSION['message'] = "Employee id is incorrect!";
             header('location: chat-employee.php');
         }
     }

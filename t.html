@@ -1,224 +1,240 @@
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- Font awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <!-- Font awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-    <!-- Logo -->
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+  <!-- Logo -->
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 
-    <title id="admin-title"></title>
+  <title id="admin-title"></title>
 </head>
 
 <body>
 
-    <!-- Navber -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid link-color">
-            <a class="navbar-brand" href="index.php">Student LifeLong</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse nav-right" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" id="home"
-                        href="admin-index.php">Home</a>
-                    </li>            
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Entry
-                        </a>
-                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="course-entry.php">Course</a></li>
-                            <li><a class="dropdown-item" href="department-entry.php">Department</a> 
-                            </li>
-                            <li><a class="dropdown-item" href="employee-entry.php">Employee</a> 
-                            </li>
-                            <li><a class="dropdown-item" href="student-entry.php">Student</a> 
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            View
-                        </a>
-                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="course-view.php">Course</a></li>
-                            <li><a class="dropdown-item" href="department-view.php">Department</a> 
-                            </li>
-                            <li><a class="dropdown-item" href="employee-view.php">Employee</a> 
-                            </li>
-                            <li><a class="dropdown-item" href="student-view.php">Student</a> 
-                            </li>
-                            <li><a class="dropdown-item" href="student-view.php">
-                            Apply by Student's</a></li>
-                            <li><a class="dropdown-item" href="student-view.php">
-                            Try to Contact by Visiter's</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Update
-                        </a>
-                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown" >
-                            <li><a class="dropdown-item" href="course-update.php">Course</a></li>
-                            <li><a class="dropdown-item" href="department-update.php">Department</a> 
-                            </li>
-                            <li><a class="dropdown-item" href="employee-update.php">Employee</a> 
-                            </li>
-                            <li><a class="dropdown-item" href="student-update.php">Student</a> 
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Delete
-                        </a>
-                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown" >
-                            <li><a class="dropdown-item" href="course-delete.php">Course</a></li>
-                            <li><a class="dropdown-item" href="department-delete.php">Department</a> 
-                            </li>
-                            <li><a class="dropdown-item" href="employee-delete.php">Employee</a> 
-                            </li>
-                            <li><a class="dropdown-item" href="student-delete.php">Student</a> 
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Admission</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Attendance</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Chat
-                        </a>
-                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="chat-employee.php">with Employee</a> 
-                            </li>
-                            <li><a class="dropdown-item" href="chat-student.php">with Student</a> 
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item search-link">
-                        <a class="nav-link" href="#" onclick="search_ber_show()">Search</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Test</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        </a>
-                        <ul class="dropdown-menu scrollable-menu dropdown-menu-lg-end" 
-                        aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="my-profile.php">My Profile</a> 
-                            </li>
-                            <li><a class="dropdown-item" href="chat-student.php">Logout</a> 
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Search ber -->
-    <div class="container mt-3" id="search_bar">
-        <form>
-            <div class="row div-search">
-                <div class="text-end search-cross">
-                    <i class="fa-sharp fa-regular fa-circle-xmark" onclick="search_ber_show()"> 
-                    </i>
-                </div>
-                <div>
-                    <input class="form-control search-ber padding-search" type="search" 
-                    placeholder="Search" aria-label="Search">
-                </div>
-                <div class="div-search-img">
-                    <i class="fa-solid fa-magnifying-glass img-magnifying-admin" ></i>
-                </div>
-            </div>
-        </form>
+  <!-- Navber -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid link-color">
+      <a class="navbar-brand" href="index.php">Student LifeLong</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse nav-right" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" id="home" href="admin-index.php">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Entry
+            </a>
+            <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="course-entry.php">Course</a></li>
+              <li><a class="dropdown-item" href="department-entry.php">Department</a>
+              </li>
+              <li><a class="dropdown-item" href="employee-entry.php">Employee</a>
+              </li>
+              <li><a class="dropdown-item" href="student-entry.php">Student</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              View
+            </a>
+            <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="course-view.php">Course</a></li>
+              <li><a class="dropdown-item" href="department-view.php">Department</a>
+              </li>
+              <li><a class="dropdown-item" href="employee-view.php">Employee</a>
+              </li>
+              <li><a class="dropdown-item" href="student-view.php">Student</a>
+              </li>
+              <li><a class="dropdown-item" href="student-view.php">
+                  Apply by Student's</a></li>
+              <li><a class="dropdown-item" href="student-view.php">
+                  Try to Contact by Visiter's</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Update
+            </a>
+            <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="course-update.php">Course</a></li>
+              <li><a class="dropdown-item" href="department-update.php">Department</a>
+              </li>
+              <li><a class="dropdown-item" href="employee-update.php">Employee</a>
+              </li>
+              <li><a class="dropdown-item" href="student-update.php">Student</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Delete
+            </a>
+            <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="course-delete.php">Course</a></li>
+              <li><a class="dropdown-item" href="department-delete.php">Department</a>
+              </li>
+              <li><a class="dropdown-item" href="employee-delete.php">Employee</a>
+              </li>
+              <li><a class="dropdown-item" href="student-delete.php">Student</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Admission</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Attendance</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Chat
+            </a>
+            <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="chat-employee.php">with Employee</a>
+              </li>
+              <li><a class="dropdown-item" href="chat-student.php">with Student</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item search-link">
+            <a class="nav-link" href="#" onclick="search_ber_show()">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Test</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+            </a>
+            <ul class="dropdown-menu scrollable-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="my-profile.php">My Profile</a>
+              </li>
+              <li><a class="dropdown-item" href="chat-student.php">Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-<!-- Custom JavaScript for search ber -->
-<script>
+  <!-- Search ber -->
+  <div class="container mt-3" id="search_bar">
+    <form>
+      <div class="row div-search">
+        <div class="text-end search-cross">
+          <i class="fa-sharp fa-regular fa-circle-xmark" onclick="search_ber_show()">
+          </i>
+        </div>
+        <div>
+          <input class="form-control search-ber padding-search" type="search" placeholder="Search" aria-label="Search">
+        </div>
+        <div class="div-search-img">
+          <i class="fa-solid fa-magnifying-glass img-magnifying-admin"></i>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Custom JavaScript for search ber -->
+  <script>
     function search_ber_display(x) {
-    if (x.matches) { 
+      if (x.matches) {
         document.getElementById("search_bar").hidden = false;
-    } else {
+      } else {
         document.getElementById("search_bar").hidden = true;
+      }
     }
-  }
 
-  var length = window.matchMedia("(max-width: 576px)")
-  search_ber_display(length) 
-  length.addListener(search_ber_display)
-</script>
+    var length = window.matchMedia("(max-width: 576px)")
+    search_ber_display(length)
+    length.addListener(search_ber_display)
+  </script>
 
-<div>
-  <button type="button" class="" data-bs-toggle="modal" data-bs-target="#send">
-    Send
-  </button>
-</div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="send" tabindex="-1" aria-labelledby="sendLabel" 
-aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="sendLabel">View Course</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" 
-                aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="mb-1">
-                  <label class="form-label" for=""><b>Name :</b> 
-                  <span>Name</span></label>
-              </div>
-              <div class="mb-1">
-                  <label class="form-label" for=""><b>Fees :</b> 
-                  <span>INR</span></label>
-              </div>
-              <div class="mb-1">
-                  <label class="form-label" for=""><b>Duration :</b> 
-                  <span>Month</span></label>
-              </div>
-            </div>
+<div class="container mt-5">
+  <div class="row justify-content-center mt-3">
+      <div class="card home">
+          <div class="self-card-body text-center">
+            <h5 class="card-title">Total Course : </h5>
+            <a href="python.php" class="btn btn-primary btn-learn">View</a>
+          </div>
+      </div>
+      <div class="card home">
+        <div class="self-card-body text-center">
+          <h5 class="card-title">Total Department : </h5>
+          <a href="python.php" class="btn btn-primary btn-learn">View</a>
         </div>
-    </div>
+      </div>
+      <div class="card home">
+        <div class="self-card-body text-center">
+          <h5 class="card-title">Total Employee : </h5>
+          <a href="python.php" class="btn btn-primary btn-learn">View</a>
+        </div>
+      </div>
+      <div class="card home">
+        <div class="self-card-body text-center">
+          <h5 class="card-title">Total Student : </h5>
+          <a href="python.php" class="btn btn-primary btn-learn">View</a>
+        </div>
+      </div>
+  </div>
 </div>
-    <!-- Custom JavaScript -->
-    <script src="script.js"></script>
+<div class="container mt-5">
+  <div class="row justify-content-center mt-3">
+      <div class="card home">
+          <div class="self-card-body text-center">
+            <h5 class="card-title">Total Admission : </h5>
+            <a href="python.php" class="btn btn-primary btn-learn">View</a>
+          </div>
+      </div>
+      <div class="card home">
+        <div class="self-card-body text-center">
+          <h5 class="card-title">Chat Recieved : </h5>
+          <a href="python.php" class="btn btn-primary btn-learn">View</a>
+        </div>
+      </div>
+      <div class="card home">
+        <div class="self-card-body text-center">
+          <h5 class="card-title">Total Apply : </h5>
+          <a href="python.php" class="btn btn-primary btn-learn">View</a>
+        </div>
+      </div>
+      <div class="card home">
+        <div class="self-card-body text-center">
+          <h5 class="card-title">Reach to Us : </h5>
+          <a href="python.php" class="btn btn-primary btn-learn">View</a>
+        </div>
+      </div>
+  </div>
+</div>
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
 
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 

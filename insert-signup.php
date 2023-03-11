@@ -46,33 +46,33 @@
                     $qury = "SELECT emp_stu_id FROM signup WHERE emp_stu_id = '".$id."'";
                     $qury = "SELECT username FROM signup WHERE username = '".$username."'";
                     if($result=$mysqli->query($qury)){
-                        if($mysqli_num_rows($result)<1){
+                        if(mysqli_num_rows($result)<1){
                             if($result=$mysqli->query($qury)){
                                 if(mysqli_num_rows($result)<1){
                                     $qury = "INSERT INTO signup(emp_stu_id,username,password,role) 
                                     VALUES('".$id."','".$username."','".$password."',
                                     '".$role_student."')";
                                     if(mysqli_query($mysqli,$qury)){
-                                        $_SESSION['new-user'] = "Thank You for creating account.";
+                                        $_SESSION['message'] = "Thank You for creating account.";
                                         header('location: user-login.php'); 
                                     }
                                 }
                                 else{
-                                    $_SESSION['already-user'] = "We notice that you have already 
+                                    $_SESSION['message'] = "We notice that you have already 
                                     create an account.";
                                     header('location: user-login.php');
                                 }
                             }
                         }
                         else{
-                            $_SESSION['already-username'] = $username. " is already taken by    
+                            $_SESSION['message'] = $username. " is already taken by    
                             others.";
                             header('location: signup.php');
                         }
                     }
                 }
                 else{
-                    $_SESSION['wrong-id-msg'] = "Invalid Employee/Student Id! Please check your 
+                    $_SESSION['message'] = "Invalid Employee/Student Id! Please check your 
                     input!";
                     header('location: signup.php');
                 }

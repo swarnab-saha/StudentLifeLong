@@ -1,6 +1,6 @@
 <?php 
-    require_once 'header-index.php';
     require_once 'database-connection.php';
+    require_once 'header-index.php';
     $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
     $qury = "SELECT * FROM course WHERE course_name = 'Full Stack Developer'";
     if($result=$mysqli->query($qury)){

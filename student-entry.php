@@ -147,7 +147,7 @@
     </div>
 <?php 
     if($department_name == 'Admin'){
-        require_once 'admin-footer.php';  
+        require_once 'admin-footer.php';
         echo '
         <script>
             document.getElementById("admin-title").innerHTML = "Student LifeLong | Student";
@@ -159,14 +159,21 @@
         <script>
             document.getElementById("admission-title").innerHTML = "Student LifeLong | Student";
         </script>'; 
-    }  
+    }
+    else if($department_name == 'HR'){
+        require_once 'hr-footer.php';
+        echo '
+        <script>
+            document.getElementById("hr-title").innerHTML = "Student LifeLong | Student";
+        </script>'; 
+    }
     else if($department_name == 'Finance'){
         require_once 'finance-footer.php';
         echo '
         <script>
             document.getElementById("finance-title").innerHTML = "Student LifeLong | Student";
         </script>'; 
-    }   
+    }     
     mysqli_close($mysqli);
     $msg = "";
     if(isset($_SESSION['message'])){

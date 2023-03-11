@@ -12,7 +12,7 @@
     $employee_id = $_SESSION['employee-id'];
     $mobile = $_POST['mobile'];
     $email = strtolower($_POST['email']);
-    $address = strtoupper($_POST['address']);
+    $address = ucwords($_POST['address']);
     $qury = "SELECT * FROM employee WHERE employee_id = '".$employee_id."'";
     if($result=$mysqli->query($qury)){
         if(mysqli_num_rows($result)>0){

@@ -1,0 +1,71 @@
+<?php 
+    require_once 'database-connection.php';
+    require_once 'student-header.php';
+?>
+
+<!-- Navber content -->
+<div class="d-flex justify-content-center mt-5">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <ol class="breadcrumb nav-bread">
+        <li class="breadcrumb-item"><a href="student-index.php">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Chat</li>
+    </ol>
+    </nav>
+</div>
+
+<div class="mt-5 table-overflow">
+    <table class="table text-center">
+        <thead class="thead-dark">
+            <tr class="bg-dark text-light">
+                <th>#</th>
+                <th>Recieved From</th>
+                <th>Message</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <?php 
+            $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
+            $id = $_SESSION['student-id'];
+            $chat_date = $_SESSION['chat_date'];
+            $qury = "SELECT * FROM chat_student WHERE student_id = '".$id."' AND chat_date = 
+            '".$chat_date."'";
+            $count = 0;
+            if($result=$mysqli->query($qury)){
+                if(mysqli_num_rows($result)>0){
+                    while($row = $result->fetch_assoc()) {
+                        $sending_id = $row['sending_id'];
+                        $message = $row['message'];
+                        $count++;
+                        echo '
+                        <thead>
+                            <tr>
+                                <td>'.$count.'</td>
+                                <td>'.$sending_id.'</td>
+                                <td>'.$message.'</td>
+                                <td>
+                                    <a class="btn btn-danger" 
+                                    href="student-chat-employee.php">Reply</a>
+                                </td>
+                            </tr>
+                        </thead>';           
+                    }
+                }
+                else{
+                    echo '
+                    <table>
+                        <marquee behavior="" direction="" class="text-danger">
+                        No data available.</marquee>
+                    </table>';
+                }
+            }       
+        ?>      
+    </table>
+</div>
+
+<?php  
+    require_once 'student-footer.php';
+?>
+
+<script>
+    document.getElementById("student-title").innerHTML = "Student LifeLong | Chat";
+</script>

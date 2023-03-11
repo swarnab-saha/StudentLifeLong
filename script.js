@@ -55,10 +55,8 @@ function search_ber_show() {
 }
 
 // Username & password
-function usernamePasswordCheck() {
+function usernameCheck(){
     var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var conpass = document.getElementById("confirm-password").value;
     if (username == "") {
         document.getElementById("user").innerHTML = "Create a new username";
         document.getElementById("submit").disabled = true;
@@ -67,6 +65,11 @@ function usernamePasswordCheck() {
     else {
         document.getElementById("user").innerHTML = "";
     }
+}
+
+function passwordCheck() {
+    var password = document.getElementById("password").value;
+    var conpass = document.getElementById("confirm-password").value;
     if (password == "") {
         document.getElementById("pass").innerHTML = "Create a new password";
         document.getElementById("submit").disabled = true;
@@ -118,3 +121,4 @@ for(var i=0; i<Item.length; i++){
         Item[i].className="nav-link  active";
     }
 }
+

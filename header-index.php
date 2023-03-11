@@ -55,7 +55,7 @@
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Courses
                         </a>
-                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown" onclick="f1()">
                             <li><a class="dropdown-item" href="angular.php">Angular</a></li>
                             <li><a class="dropdown-item" href="bootstrap.php">Bootstrap</a></li>
                             <li><a class="dropdown-item" href="cloud-computing.php">Cloud 
@@ -108,11 +108,11 @@
 
     <!-- Search ber -->
     <div class="container mt-3">
-        <form>
+        <form action="search.php" method="get">
             <div class="row div-search">
                 <div>
                     <input class="form-control search-ber padding-search" type="search" 
-                    placeholder="Search" aria-label="Search">
+                    placeholder="Search" aria-label="Search" name="search-box">
                 </div>
                 <div class="div-search-img">
                     <i class="fa-solid fa-magnifying-glass img-magnifying"></i>

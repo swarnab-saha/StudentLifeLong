@@ -12,13 +12,13 @@
             }   
             else if($department_name == 'Admission'){
                 require_once 'admission-header.php';
-            }
+            } 
             else if($department_name == 'HR'){
                 require_once 'hr-header.php';
             }
             else if($department_name == 'Finance'){
                 require_once 'finance-header.php';
-            }    
+            }     
         }
     }
 ?>
@@ -49,28 +49,56 @@
     </ol>
     </nav>
 </div>
-    <div class="container mt-5 mb-5">
-        <div class="row justify-content-center">
-            <div class="col-xl-4 col-lg-4 col-md-5 col-sm-6 col-8">
-                <form class="form-bg" action="view-date-chat-student.php" method="post">
-                    <div class="mb-3">
-                        <h4 class="text-center field-top">Chat</h4>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label mb-0" for="chat_date"><b>Date</b><span 
-                        class="text-danger">*</span></label>
-                        <input  class="form-control" type="date" name="chat_date" 
-                        id="chat_date" title="Select Chat Date" 
-                        placeholder="Select Chat Date" required>
-                    </div>
-                    <div class="text-center">
-                        <input class="btn btn-danger btn-apply" type="submit" id="submit" 
-                        value="Search">
-                    </div>
-                </form>
-            </div>
-        </div>      
-    </div>
+
+<div class="mt-5 table-overflow">
+    <table class="table text-center">
+        <thead class="thead-dark">
+            <tr class="bg-dark text-light">
+                <th>#</th>
+                <th>Recieved From</th>
+                <th>Message</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <?php 
+            $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
+            $id = $_SESSION['employee-id'];
+            $chat_date = $_SESSION['chat_date'];
+            $qury = "SELECT * FROM chat_employee WHERE employee_id = '".$id."' AND chat_date = 
+            '".$chat_date."'";
+            $count = 0;
+            if($result=$mysqli->query($qury)){
+                if(mysqli_num_rows($result)>0){
+                    while($row = $result->fetch_assoc()) {
+                        $sending_id = $row['sending_id'];
+                        $message = $row['message'];
+                        $count++;
+                        echo '
+                        <thead>
+                            <tr>
+                                <td>'.$count.'</td>
+                                <td>'.$sending_id.'</td>
+                                <td>'.$message.'</td>
+                                <td>
+                                    <a class="btn btn-danger" 
+                                    href="chat-employee.php">Reply</a>
+                                </td>
+                            </tr>
+                        </thead>';           
+                    }
+                }
+                else{
+                    echo '
+                    <table>
+                        <marquee behavior="" direction="" class="text-danger">
+                        No data available.</marquee>
+                    </table>';
+                }
+            }       
+        ?>      
+    </table>
+</div>
+
 <?php 
     if($department_name == 'Admin'){
         require_once 'admin-footer.php';
@@ -85,31 +113,20 @@
         <script>
             document.getElementById("admission-title").innerHTML = "Student LifeLong | Chat";
         </script>'; 
-    } 
+    }
     else if($department_name == 'HR'){
         require_once 'hr-footer.php';
         echo '
         <script>
             document.getElementById("hr-title").innerHTML = "Student LifeLong | Chat";
         </script>'; 
-    } 
+    }
     else if($department_name == 'Finance'){
         require_once 'finance-footer.php';
         echo '
         <script>
             document.getElementById("finance-title").innerHTML = "Student LifeLong | Chat";
         </script>'; 
-    }     
-    $msg = "";
-    if(isset($_SESSION['message'])){
-        $msg = $_SESSION['message'];
-        unset($_SESSION['message']);
-    }
-    echo '
-    <script>
-        var msg = "'.$msg.'";
-        if(msg != ""){
-            alert(msg);
-        }
-    </script>';  
+    }  
+    mysqli_close($mysqli);
 ?>

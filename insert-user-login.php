@@ -41,11 +41,20 @@
             }
         }
         else{
-            // $qury = "SELECT * FROM signup WHERE username = '".$username."' AND password = 
-            // '".$password."' AND role = '".$role_student."'";
-            // require_once 'index.php';
-            $_SESSION['message'] = "Invalid Username or Passwod!";
-            header('location: index.php');
+            $qury = "SELECT * FROM signup WHERE username = '".$username."' AND password = 
+            '".$password."' AND role = '".$role_student."'";
+            if($result=$mysqli->query($qury)){
+                if(mysqli_num_rows($result)>0){
+                    $row = $result->fetch_assoc();
+                    $student_id = $row['emp_stu_id'];
+                    $_SESSION['student-id'] = $student_id;
+                    header('location: student-index.php');
+                }
+                else{
+                    $_SESSION['message'] = "Invalid Username or Password!";
+                    header('location: user-login.php');
+                }
+            }
         }
     }
 ?>

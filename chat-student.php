@@ -159,5 +159,17 @@
             document.getElementById("finance-title").innerHTML = "Student LifeLong | Chat";
         </script>'; 
     } 
+    $msg = "";
+    if(isset($_SESSION['message'])){
+        $msg = $_SESSION['message'];
+        unset($_SESSION['message']);
+    }
+    echo '
+    <script>
+        var msg = "'.$msg.'";
+        if(msg != ""){
+            alert(msg);
+        }
+    </script>';  
     mysqli_close($mysqli);  
 ?>

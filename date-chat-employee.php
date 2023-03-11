@@ -52,7 +52,7 @@
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-xl-4 col-lg-4 col-md-5 col-sm-6 col-8">
-                <form class="form-bg" action="delete-course.php" method="post">
+                <form class="form-bg" action="view-date-chat-employee.php" method="post">
                     <div class="mb-3">
                         <h4 class="text-center field-top">Chat</h4>
                     </div>
@@ -100,5 +100,16 @@
             document.getElementById("finance-title").innerHTML = "Student LifeLong | Chat";
         </script>'; 
     }      
-    mysqli_close($mysqli); 
+    $msg = "";
+    if(isset($_SESSION['message'])){
+        $msg = $_SESSION['message'];
+        unset($_SESSION['message']);
+    }
+    echo '
+    <script>
+        var msg = "'.$msg.'";
+        if(msg != ""){
+            alert(msg);
+        }
+    </script>';  
 ?>
